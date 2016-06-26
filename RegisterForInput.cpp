@@ -1,15 +1,5 @@
 #include "RegisterForInput.h"
 
-
-RegisterForInput::RegisterForInput()
-{
-}
-
-
-RegisterForInput::~RegisterForInput()
-{
-}
-
 void RegisterForInput::RegisterForUserInput(sf::Event::EventType eventType, VoidFuncNoArgs funcToCall)
 {
 	InputEventToFunctionPair eventToFunction;
@@ -17,4 +7,15 @@ void RegisterForInput::RegisterForUserInput(sf::Event::EventType eventType, Void
 	eventToFunction.second = funcToCall;
 
 	m_functionContainer.push_back(eventToFunction);
+}
+
+RegisterForInput &RegisterForInput::Get()
+{
+	static RegisterForInput registerInstance;
+	return registerInstance;
+}
+
+const std::vector<InputEventToFunctionPair> &RegisterForInput::GetFuncContainer() const
+{
+	return m_functionContainer;
 }

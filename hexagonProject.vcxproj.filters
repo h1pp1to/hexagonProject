@@ -27,17 +27,11 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputDefines.h">
+    <ClInclude Include="RegisterForInput.h">
       <Filter>InputControler</Filter>
     </ClInclude>
     <ClInclude Include="DetectUserInput.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NotifyRegisteredForInput.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RegisterForInput.h">
-      <Filter>Header Files</Filter>
+      <Filter>InputControler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -48,13 +42,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DetectUserInput.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NotifyRegisteredForInput.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>InputControler</Filter>
     </ClCompile>
     <ClCompile Include="RegisterForInput.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>InputControler</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\SelectMenu.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

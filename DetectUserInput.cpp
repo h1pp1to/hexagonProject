@@ -1,25 +1,17 @@
 #include "DetectUserInput.h"
-
+#include "RegisterForInput.h"
 
 DetectUserInput::DetectUserInput(){}
 DetectUserInput::~DetectUserInput(){}
 
-void DetectUserInput::SetWhoToNotify(NotifyRegisteredForInput* toNotify)
-{
-	m_notifyFunctionsPtr = toNotify;
-}
-
 void DetectUserInput::CheckForUserInput(sf::Event event)
 {
-	m_notifyFunctionsPtr->NotifyRegisteredForEventType(event.type);
-
-	/*if (event.type == sf::Event::KeyPressed)
+	//NOTE - notify all registered functions for handeled eventType
+	for (const auto& it : RegisterForInput::Get().GetFuncContainer())
 	{
-		m_notifyFunctionsPtr->NotifyRegisteredForEventType(sf::Event::KeyPressed);
+		if (event.type == it.first)
+		{
+			it.second(); // Call function
+		}
 	}
-
-	if (event.type == sf::Event::MouseButtonPressed)
-	{
-		m_notifyFunctionsPtr->NotifyRegisteredForEventType(sf::Event::MouseButtonPressed);
-	}*/
 }
